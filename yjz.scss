@@ -1,0 +1,84 @@
+//display:flex 兼容
+@mixin flex {
+	display: box;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;
+}
+//flex横轴居中
+@mixin flexHC {
+	-webkit-box-pack: center;-webkit-justify-content: center;justify-content: center;
+}
+//flex纵轴居中
+@mixin flexZC {
+	-webkit-box-align: center;-webkit-align-items: center;align-items: center;
+}
+//flex横轴平均分布
+@mixin flexHS {
+	-webkit-box-pack:justify;-moz-box-pack:justify;-ms-box-pack:justify;-webkit-justify-content:space-between;justify-content: space-between;
+}
+//flex-direction:column兼容
+@mixin flexDirectionC {
+	-webkit-box-orient:vertical;-moz-box-orient:vertical;-ms-box-orient:vertical;-webkit-box-direction:normal;-moz-box-direction:normal;-ms-box-direction:normal;-webkit-flex-direction:column;flex-direction:column;
+}
+//flex居中
+@mixin flexMid {
+	@include flex;
+	@include flexHC;
+	@include flexZC;
+}
+//兼容ie的居中，需要声明元素高度
+@mixin allCenter {
+  margin: auto;
+  position: absolute;
+  overflow:auto;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+//盒模型padding计算在宽高内
+@mixin boxSizing{
+	-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;
+}
+//自动换行
+@mixin huangHang{
+	word-wrap:break-word; word-break:break-all;
+}
+//定义文本的行数，超出...
+@mixin textCol($num){
+	word-break:break-all;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $num;
+}
+//文字超出...
+@mixin textOver{
+	display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+//蒙板
+@mixin gray{
+	position: fixed;
+	background:#000;
+	opacity: .4;
+	top:0;left:0;right: 0;bottom: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+}
+//弹性伸缩量
+@mixin flexBox($num){
+	-webkit-flex: $num;          
+    flex: $num;         
+    -webkit-box-flex: $num;      
+    -moz-box-flex: $num;         
+    -ms-flex: $num;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
